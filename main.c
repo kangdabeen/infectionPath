@@ -29,6 +29,9 @@ int main(int argc, const char * argv[]) {
     
     int i;
     int num;
+    int pnum = ifctdb_len();
+    int anum = ifctdb_len();
+    
     char place;
     int max_age; 
 	int min_age;
@@ -99,15 +102,26 @@ int main(int argc, const char * argv[]) {
             case MENU_PATIENT:			
                 printf("Patient index : ");
                 scanf("%d", &num);
-                
-                
             
+                if (pIndex > num)
+                {
+                	ifctele_printElement (ifctdb_getData(num));
+				}
                 
                 break;
                 
             case MENU_PLACE:
                 printf("Place name : ");
                 scanf("%s", &place);
+                
+                for (i=0; i<100; i++)
+                {
+                	if (strcmp(place, ifctele_getPlaceName(ifctele_getHistPlaceIndex(ifctdb_getData(i), N_HISTORY-1))) == 0)
+                	
+                	ifctele_printElement(ifctdb_getData(i));
+                	
+                	else pnum --;
+				}
                 
                 break;
                 
@@ -120,8 +134,11 @@ int main(int argc, const char * argv[]) {
                 
                 for (i=0; i<5; i++)
                 {
-                	if(min_age <= ifctele_getAge(ifctdb_getData(i)) && max_age >= ifctele_getAge(ifctdb_getData(i)));
+                	if(min_age <= ifctele_getAge(ifctdb_getData(i)) && max_age >= ifctele_getAge(ifctdb_getData(i)))
                 	
+                	ifctele_printElement(ifctdb_getData(i));
+                	
+                	else anum --;
 				}
                 
                 break;
@@ -129,6 +146,8 @@ int main(int argc, const char * argv[]) {
             case MENU_TRACK:
             	printf("Index : ");
             	scanf("%d", &pIndex);
+            	
+            	
                     
                 break;
                 
@@ -144,5 +163,35 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
+int pIndex;
+
+present_patient = pIndex;
+
+while (present_patient = who) 
+{
+	spreader = trackInfecter(present_patient);
+	
+	if(spreader = present_patient)
+	printf ("%i patient is infected by %i patient. \n", present_patient, spreader);
+	
+	else
+	first_spreader = present_patient;
+	present_patient = spreader;
+}
+
+int trackInfecter()
+{
+	int meettime;
+	
+	meettime = isMet(present_patient, i);
+	if (meettime > 0)
+	{
+		if (meettime < 0 )
+		{
+			spreader = i;
+		}
+	}
+	return spreader;
+}
 
 
