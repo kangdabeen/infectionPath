@@ -98,7 +98,9 @@ int main(int argc, const char * argv[]) {
                 
             case MENU_PATIENT:			
                 printf("Patient index : ");
-                scanf("%d", &pIndex);
+                scanf("%d", &num);
+                
+                
             
                 
                 break;
@@ -110,11 +112,17 @@ int main(int argc, const char * argv[]) {
                 break;
                 
             case MENU_AGE:
-                printf("Max age : ");
+                printf("max age : ");
                 scanf("%d", &max_age);
                 
                 printf("min age : ");
                 scanf("%d", &min_age);
+                
+                for (i=0; i<5; i++)
+                {
+                	if(min_age <= ifctele_getAge(ifctdb_getData(i)) && max_age >= ifctele_getAge(ifctdb_getData(i)));
+                	
+				}
                 
                 break;
                 
