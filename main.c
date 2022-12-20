@@ -167,7 +167,7 @@ int pIndex;
 
 present_patient = pIndex;
 
-while (present_patient = who) 
+while (present_patient = who) ;
 {
 	spreader = trackInfecter(present_patient);
 	
@@ -193,5 +193,25 @@ int trackInfecter()
 	}
 	return spreader;
 }
+
+
+int isMet(a_patient, int b_patient)
+{
+	for (i=2; i<N_HISTORY; i++)
+	
+	return meettime;
+}
+
+int convertTimeToIndex(int time, int infectedTime)
+{
+	int index = -1;
+	
+	if (time <= infectedTime && time > infectedTime - N_HISTORY)
+	{
+		index = N_HISTORY - (infectedTime - time) - 1;
+	}
+	return index;
+}
+
 
 
